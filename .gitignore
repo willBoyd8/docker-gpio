@@ -2,12 +2,6 @@
 # Created by https://www.gitignore.io/api/linux,macos,python,windows,visualstudio,visualstudiocode,docker,kubernetes,jenkins
 # Edit at https://www.gitignore.io/?templates=linux,macos,python,windows,visualstudio,visualstudiocode,docker,kubernetes,jenkins
 
-#!! ERROR: docker is undefined. Use list command to see defined gitignore types !!#
-
-#!! ERROR: jenkins is undefined. Use list command to see defined gitignore types !!#
-
-#!! ERROR: kubernetes is undefined. Use list command to see defined gitignore types !!#
-
 ### Linux ###
 *~
 
@@ -542,3 +536,4 @@ healthchecksdb
 MigrationBackup/
 
 # End of https://www.gitignore.io/api/linux,macos,python,windows,visualstudio,visualstudiocode,docker,kubernetes,jenkins
+/venv/
