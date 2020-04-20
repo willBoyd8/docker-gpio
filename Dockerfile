@@ -7,7 +7,7 @@ ADD requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 # Add the source and move to it's new directory
-ADD button-plus-led /button
+ADD . /button
 WORKDIR /button
 
 # Set the entrypoint
