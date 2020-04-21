@@ -11,7 +11,7 @@ metadata:
 spec:
   containers:
   - name: green-led
-    image: button-plus-led
+    image: docker.local/gpio/button-plus-led
     args: ["--button", "GPIO27", "--pin", "GPIO17"]
     securityContext:
       privileged: true
