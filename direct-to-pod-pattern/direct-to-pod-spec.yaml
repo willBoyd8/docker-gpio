@@ -22,8 +22,10 @@ spec:
         name: sys
   volumes:
     - name: gpiomem
-      path: /dev/gpiomem
-      type: CharDevice
+      hostPath:
+        path: /dev/gpiomem
+        type: CharDevice
     - name: sys
-      path: /sys
-      type: Directory
+      hostPath:
+        path: /sys
+        type: Directory
