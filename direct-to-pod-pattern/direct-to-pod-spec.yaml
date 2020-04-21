@@ -1,15 +1,22 @@
 apiVersion: v1
+kind: Namespace
+metadata:
+  name: direct-to-pod-pattern-ns
+---
+apiVersion: v1
 kind: Pod
 metadata:
-  name: direct-to-pod
-  namespace: direct-to-pod-ns
+  name: direct-to-pod-pattern
+  namespace: direct-to-pod-pattern-ns
 spec:
   containers:
-  - name: button-plus-led
+  - name: green-led
     image: button-plus-led
     args: ["--button", "GPIO27", "--pin", "GPIO17"]
+    securityContext:
+      privileged: true
     volumeMounts:
-      - mountPath: /dev/gpio
+      - mountPath: /dev/gpiomem
         name: gpiomem
       - mountPath: /sys
         name: sys
