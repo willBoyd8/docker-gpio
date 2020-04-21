@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: direct-to-pod
+  namespace: direct-to-pod-ns
+spec:
+  containers:
+  - name: button-plus-led
+    image: button-plus-led
+    args: ["--button", "GPIO27", "--pin", "GPIO17"]
+    volumeMounts:
+      - mountPath: /dev/gpio
+        name: gpiomem
+      - mountPath: /sys
+        name: sys
+  volumes:
+    - name: gpiomem
+      path: /dev/gpiomem
+      type: CharDevice
+    - name: sys
+      path: /sys
+      type: Directory
