@@ -20,9 +20,19 @@ spec:
         name: gpiomem
       - mountPath: /sys
         name: sys
-  - name: blue-led
+  - name: blue-led-from-green-button
     image: docker.local/gpio/button-plus-led
     args: ["--button", "GPIO27", "--led", "GPIO16"]
+    securityContext:
+      privileged: true
+    volumeMounts:
+      - mountPath: /dev/gpiomem
+        name: gpiomem
+      - mountPath: /sys
+        name: sys
+  - name: blue-led
+    image: docker.local/gpio/button-plus-led
+    args: ["--button", "GPIO26", "--led", "GPIO16"]
     securityContext:
       privileged: true
     volumeMounts:
