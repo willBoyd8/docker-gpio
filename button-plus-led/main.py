@@ -7,7 +7,7 @@ def main():
     Blinks an LED on and off forever
     """
     parser = argparse.ArgumentParser(description='Turn an LED on when a button is pressed')
-    parser.add_argument('--pin', '-p', type=str, default="GPIO17", help='The pin the LED is connected to')
+    parser.add_argument('--led', '-l', type=str, default="GPIO17", help='The pin the LED is connected to')
     parser.add_argument('--button', '-b', type=str, default="GPIO27", help='The pin the button is connected to')
 
     args = parser.parse_args()

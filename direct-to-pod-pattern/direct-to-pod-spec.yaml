@@ -12,7 +12,7 @@ spec:
   containers:
   - name: green-led
     image: docker.local/gpio/button-plus-led
-    args: ["--button", "GPIO27", "--pin", "GPIO17"]
+    args: ["--button", "GPIO27", "--led", "GPIO17"]
     securityContext:
       privileged: true
     volumeMounts:
