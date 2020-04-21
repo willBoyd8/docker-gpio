@@ -21,15 +21,15 @@ spec:
       - mountPath: /sys
         name: sys
   - name: blue-led
-      image: docker.local/gpio/button-plus-led
-      args: ["--button", "GPIO27", "--led", "GPIO16"]
-      securityContext:
-        privileged: true
-      volumeMounts:
-        - mountPath: /dev/gpiomem
-          name: gpiomem
-        - mountPath: /sys
-          name: sys
+    image: docker.local/gpio/button-plus-led
+    args: ["--button", "GPIO27", "--led", "GPIO16"]
+    securityContext:
+      privileged: true
+    volumeMounts:
+      - mountPath: /dev/gpiomem
+        name: gpiomem
+      - mountPath: /sys
+        name: sys
   volumes:
     - name: gpiomem
       hostPath:
