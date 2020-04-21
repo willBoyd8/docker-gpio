@@ -20,7 +20,7 @@ def main():
 
     args = parser.parse_args()
 
-    led = LED(args.pin)
+    led = LED(args.led)
     button = Button(args.button)
 
     print('Ready for interaction!')
